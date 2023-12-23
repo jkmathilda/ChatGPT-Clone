@@ -4,7 +4,7 @@ Chatbots are one of the central LLM use-cases. The core features of chatbots are
 
 Aside from basic prompting and LLMs, memory and retrieval are the core components of a chatbot. Memory allows a chatbot to remember past interactions, and retrieval provides a chatbot with up-to-date, domain-specific information.
 
-
+![chat_use_case-eb8a4883931d726e9f23628a0d22e315](https://github.com/jkmathilda/ChatGPT-Chatbot/assets/142202145/9cf8af68-1851-410d-bae3-167039dbf35b)
 
 # Getting Started
 
