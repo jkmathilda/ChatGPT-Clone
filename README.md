@@ -16,7 +16,7 @@ To get started with this project, you'll need to clone the repository and set up
 
 ### Setting up a Virtual Environment
 
-    cd ./ChatGPT-Clone
+    cd ./ChatGPT-Chatbot
 
     pyenv versions
 
