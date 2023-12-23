@@ -12,7 +12,7 @@ To get started with this project, you'll need to clone the repository and set up
 
 ### Cloning the Repository
 
-    git clone https://github.com/jkmathilda/ChatGPT-Clone.git
+    git clone https://github.com/jkmathilda/ChatGPT-Chatbot.git
 
 ### Setting up a Virtual Environment
 
