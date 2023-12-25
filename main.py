@@ -24,7 +24,7 @@ def init():
     # Define Streamlit page configuration.
     st.set_page_config(
         page_title="Your own ChatGPT",  # Title of the page.
-        page_icon="⌨️"                   # Icon of the page.
+        page_icon="💬"                   # Icon of the page.
     )
 
 def main():
@@ -38,19 +38,44 @@ def main():
         st.session_state.messages = [
             SystemMessage(content="You are a helpful assistant.")  # Start the conversation with a system message.
         ]
+     
     
     # Set up the header of the page.
-    st.header("Your own ChatGPT.")
+    st.header("Your own ChatGPT 💬")
     
     # Create a text input field in the sidebar for user input.
     with st.sidebar:
         user_input = st.text_input("Your message: ", key="user_input")
         show_message = st.radio(
-            "Set a message visibility 👉",
+            "Set a message visibility 👀",
             key="visibility",
             options=["visible", "hidden"],
             index=1,
         )
+        role = st.radio(
+            "Assign a role to the bot 🤖",
+            key="role",
+            options=["Assistant", "Counselor", "Teacher", "Artist"]
+        )
+        
+
+    if role == "Assistant":
+        st.session_state.messages = [
+            SystemMessage(content="You are a helpful assistant.")
+        ]
+    elif role == "Counselor":
+        st.session_state.messages = [
+            SystemMessage(content="You are an emphathetic counselor who provides effective solutions to user's problem.") 
+        ]
+    elif role == "Teacher":
+        st.session_state.messages = [
+            SystemMessage(content="You are an understanding teacher who explains concepts user asks about with easy explanations.") 
+        ]
+    elif role == "Artist":
+        st.session_state.messages = [
+            SystemMessage(content="You are a creative artist who provides innovative and creative ideas.") 
+        ]
+            
     
     # Process the user's message.
     if user_input:
