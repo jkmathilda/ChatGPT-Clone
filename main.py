@@ -26,7 +26,12 @@ def init():
         page_title="Your own ChatGPT",  # Title of the page.
         page_icon="💬"                   # Icon of the page.
     )
-    
+
+# Clearing input field
+def clear_text():
+    global input_value 
+    input_value = st.session_state.user_input
+    st.session_state.user_input = ""
 
 def main():
     init()  # Call the initialization function.
@@ -40,7 +45,6 @@ def main():
         
     if 'user_input' not in st.session_state:
         st.session_state.user_input = ""
-
     
     # Set up the header of the page.
     st.header("Your own ChatGPT 💬")
@@ -60,11 +64,10 @@ def main():
             options=["Assistant", "Counselor", "Teacher", "Artist"]
         )
     
-    # User input
-    user_input = st.text_input("Your message: ", key="user_input")
+    st.text_input("Your message: ", on_change=clear_text(), key="user_input")
     
     # Process the user's message.
-    if user_input:
+    if input_value:
         # Assigning roles
         if role == "Assistant":
             st.session_state.messages.append(SystemMessage(content="You are a helpful assistant."))
@@ -74,7 +77,7 @@ def main():
             st.session_state.messages.append(SystemMessage(content="You are an understanding teacher who explains concepts user asks about with easy explanations. If possible, give analogies or useful examples. "))
         elif role == "Artist":
             st.session_state.messages.append(SystemMessage(content="You are a creative artist who provides innovative and creative ideas."))
-        st.session_state.messages.append(HumanMessage(content=user_input))  # Add the user's message to the session state.
+        st.session_state.messages.append(HumanMessage(content=input_value))  # Add the user's message to the session state.
         with st.spinner("Thinking..."):                                     # Show a spinner while waiting for a response.
             response = chat(st.session_state.messages)                      # Get a response from the LangChain chatbot.
         st.session_state.messages.append(AIMessage(content=response.content))  # Add the AI's response to the session state.
