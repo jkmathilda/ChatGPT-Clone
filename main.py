@@ -47,7 +47,7 @@ def main():
             "Set a message visibility 👀",
             key="visibility",
             options=["visible", "hidden"],
-            index=0,
+            index=1,
         )
     
         role = st.radio(
