@@ -35,10 +35,7 @@ def main():
     
     # Initialize the Streamlit session state to keep track of the messages.
     if "messages" not in st.session_state:
-        st.session_state.messages = [
-            SystemMessage(content="You are a helpful assistant.")  # Start the conversation with a system message.
-        ]
-     
+        st.session_state.messages = []
     
     # Set up the header of the page.
     st.header("Your own ChatGPT 💬")
@@ -50,35 +47,26 @@ def main():
             "Set a message visibility 👀",
             key="visibility",
             options=["visible", "hidden"],
-            index=1,
+            index=0,
         )
+    
         role = st.radio(
             "Assign a role to the bot 🤖",
             key="role",
             options=["Assistant", "Counselor", "Teacher", "Artist"]
         )
-        
-
-    if role == "Assistant":
-        st.session_state.messages = [
-            SystemMessage(content="You are a helpful assistant.")
-        ]
-    elif role == "Counselor":
-        st.session_state.messages = [
-            SystemMessage(content="You are an emphathetic counselor who provides effective solutions to user's problem.") 
-        ]
-    elif role == "Teacher":
-        st.session_state.messages = [
-            SystemMessage(content="You are an understanding teacher who explains concepts user asks about with easy explanations.") 
-        ]
-    elif role == "Artist":
-        st.session_state.messages = [
-            SystemMessage(content="You are a creative artist who provides innovative and creative ideas.") 
-        ]
-            
     
     # Process the user's message.
     if user_input:
+        # Assigning roles
+        if role == "Assistant":
+            st.session_state.messages.append(SystemMessage(content="You are a helpful assistant."))
+        elif role == "Counselor":
+            st.session_state.messages.append(SystemMessage(content="You are a counselor who provides effective solutions to user's problem with an empathetic tone."))
+        elif role == "Teacher":
+            st.session_state.messages.append(SystemMessage(content="You are an understanding teacher who explains concepts user asks about with easy explanations. If possible, give analogies or useful examples. "))
+        elif role == "Artist":
+            st.session_state.messages.append(SystemMessage(content="You are a creative artist who provides innovative and creative ideas."))
         st.session_state.messages.append(HumanMessage(content=user_input))  # Add the user's message to the session state.
         with st.spinner("Thinking..."):                                     # Show a spinner while waiting for a response.
             response = chat(st.session_state.messages)                      # Get a response from the LangChain chatbot.
@@ -87,8 +75,10 @@ def main():
     # Iterate through the stored messages and display them on the screen.
     messages = st.session_state.get('messages', [])
     
-    for i, msg in enumerate(messages[1:]):                              # Display all messages except the first system message.
-        if i % 2 == 0:
+    for i, msg in enumerate(messages):                              # Display all messages
+        if i % 3 == 0:                                                          
+            continue                                                           # Do not display system messages. 
+        elif i % 3 == 1:
             stchat_message(msg.content, is_user=True, key=str(i) + '_user')    # Display user messages.
         else:
             stchat_message(msg.content, is_user=False, key=str(i) + '_ai')     # Display AI messages.
