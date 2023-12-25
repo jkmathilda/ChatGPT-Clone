@@ -6,7 +6,7 @@ Aside from basic prompting and LLMs, memory and retrieval are the core component
 
 ![chat_use_case-eb8a4883931d726e9f23628a0d22e315](https://github.com/jkmathilda/ChatGPT-Chatbot/assets/142202145/9cf8af68-1851-410d-bae3-167039dbf35b)
 
-### Example
+# Example
 
 ![Image 2023-12-24 at 3 56 PM](https://github.com/jkmathilda/ChatGPT-Chatbot/assets/142202145/2832e61d-469e-4cbf-8f45-cd6bcbbe2fc4)
 
