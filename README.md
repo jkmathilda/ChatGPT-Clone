@@ -1,4 +1,4 @@
-# ChatGPT
+# Chatbot
 
 Chatbots are one of the central LLM use-cases. The core features of chatbots are that they can have long-running conversations and have access to information that users want to know about.
 
@@ -51,12 +51,14 @@ To configure the application, there are a few properties that can be set the env
 
     deactivate
 
-### Reference
+# Example
+
+![Image 2023-12-24 at 4 13 PM](https://github.com/jkmathilda/ChatGPT-Chatbot/assets/142202145/97ed8233-49b0-4df3-bb62-b6e213a31b4b)
+
+# Reference
 
 Chatbots (on LangChain)
 [https://python.langchain.com/docs/use_cases/chatbots]
 
 Youtube : Create a ChatGPT clone using Streamlit and LangChain
 [https://www.youtube.com/watch?v=IaTiyQ2oYUQ]
-
---
