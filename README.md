@@ -53,7 +53,7 @@ To configure the application, there are a few properties that can be set the env
 
 # Example
 
-![Image 2023-12-24 at 4 13 PM](https://github.com/jkmathilda/ChatGPT-Chatbot/assets/142202145/97ed8233-49b0-4df3-bb62-b6e213a31b4b)
+![Image 2023-12-24 at 8 15 PM](https://github.com/jkmathilda/ChatGPT-Chatbot/assets/142202145/139d65b5-4694-4176-b3e2-047d7616a728)
 
 # Reference
 
