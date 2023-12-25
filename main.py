@@ -42,7 +42,7 @@ def main():
     
     # Create a text input field in the sidebar for user input.
     with st.sidebar:
-        user_input = st.text_input("Your message: ", key="user_input")
+        #user_input = st.text_input("Your message: ", key="user_input")
         show_message = st.radio(
             "Set a message visibility 👀",
             key="visibility",
@@ -55,6 +55,9 @@ def main():
             key="role",
             options=["Assistant", "Counselor", "Teacher", "Artist"]
         )
+    
+    # User input
+    user_input = st.text_input("Your message: ", key="user_input")
     
     # Process the user's message.
     if user_input:
