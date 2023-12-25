@@ -1,4 +1,4 @@
-# ChatGPT
+# Chatbot
 
 Chatbots are one of the central LLM use-cases. The core features of chatbots are that they can have long-running conversations and have access to information that users want to know about.
 
