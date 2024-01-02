@@ -1,6 +1,6 @@
 # Chatbot
 
-Chatbots are one of the central LLM use-cases. The core features of chatbots are that they can have long-running conversations and have access to information that users want to know about.
+Chatbots are one of the major LLM use-cases. The core features of chatbots are that they can have long-running conversations and have access to information that users want to know about.
 
 Aside from basic prompting and LLMs, memory and retrieval are the core components of a chatbot. Memory allows a chatbot to remember past interactions, and retrieval provides a chatbot with up-to-date, domain-specific information.
 
