@@ -12,11 +12,11 @@ To get started with this project, you'll need to clone the repository and set up
 
 ### Cloning the Repository
 
-    git clone https://github.com/jkmathilda/ChatGPT-Chatbot.git
+    git clone https://github.com/jkmathilda/gpt-Chatbot.git
 
 ### Setting up a Virtual Environment
 
-    cd ./ChatGPT-Chatbot
+    cd ./gpt-Chatbot
 
     pyenv versions
 
@@ -35,7 +35,11 @@ To get started with this project, you'll need to clone the repository and set up
 
 ### Install the required dependencies
 
+    pip list
+
     pip install -r requirements.txt
+
+    pip freeze | tee requirements.txt.detail
 
 ### Configure the Application
 

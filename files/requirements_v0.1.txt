@@ -3,4 +3,3 @@ openai
 streamlit
 streamlit_chat
 langchain
-langchain-community
