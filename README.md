@@ -49,7 +49,7 @@ To configure the application, there are a few properties that can be set the env
 
 ### Running the Application
 
-    python -m streamlit run main.py
+    python3 -m streamlit run main.py
 
 ### Deactivate the virtual environment
 
